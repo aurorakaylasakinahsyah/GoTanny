@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO TANY - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            background: linear-gradient(135deg, #e8e4d9 0%, #d9d0be 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 80px;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .logo-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo-container {
+            position: relative;
+            width: 380px;
+            height: 380px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        .logo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Jika Anda ingin menggunakan gambar, uncomment CSS di bawah ini dan comment yang di atas */
+        /*
+        .logo-image {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+        */
+
+        .company-name {
+            font-size: 22px;
+            font-weight: 600;
+            color: #4a5d30;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .login-section {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .login-card {
+            background: linear-gradient(135deg, #5d7a3d 0%, #4d6a2d 100%);
+            border-radius: 25px;
+            padding: 55px 50px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .login-title {
+            color: white;
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            margin-bottom: 8px;
+        }
+
+        .login-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+        }
+
+        .form-label {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 10px;
+            display: block;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #3d4d27;
+            font-size: 18px;
+            z-index: 1;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px 22px 16px 55px;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            background: rgba(139, 157, 95, 0.5);
+            color: #1a1a1a;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .form-input::placeholder {
+            color: rgba(0, 0, 0, 0.35);
+            font-weight: 400;
+        }
+
+        .form-input:focus {
+            background: rgba(139, 157, 95, 0.7);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-top: 12px;
+        }
+
+        .forgot-password a {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #4a5d30 0%, #3a4d20 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 35px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            background: linear-gradient(135deg, #3a4d20 0%, #2a3d10 100%);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .divider span {
+            padding: 0 15px;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 25px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        .google-login {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .google-button {
+            width: 100%;
+            max-width: 320px;
+            height: 50px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            .logo-container {
+                width: 320px;
+                height: 320px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .login-card {
+                padding: 40px 30px;
+            }
+
+            .login-title {
+                font-size: 36px;
+                letter-spacing: 4px;
+            }
+
+            .logo-container {
+                width: 280px;
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-section">
+            <div class="logo-container">
+                <img src="gambar/LOGO.png" alt="GO TANY Logo" class="logo-image">
+            </div>
+            <div class="company-name">Organic Solutions</div>
+        </div>
+
+        <div class="login-section">
+            <div class="login-card">
+                <div class="login-header">
+                    <h1 class="login-title">LOGIN</h1>
+                    <p class="login-subtitle">Silakan masuk ke akun Anda</p>
+                </div>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label class="form-label">Username</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" class="form-input" placeholder="Masukkan username" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" class="form-input" placeholder="Masukkan password" required>
+                        </div>
+                        <div class="forgot-password">
+                            <a href="#">Lupa password?</a>
+                        </div>
+                    </div>
+                    <button type="submit" class="login-button">Masuk</button>
+                    
+                    <div class="divider">
+                        <span>ATAU</span>
+                    </div>
+                    
+                    <div class="google-login">
+                        <div id="g_id_onload"
+                             data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                             data-callback="handleCredentialResponse">
+                        </div>
+                        <div class="g_id_signin google-button"
+                             data-type="standard"
+                             data-size="large"
+                             data-theme="outline"
+                             data-text="sign_in_with"
+                             data-shape="rectangular"
+                             data-logo_alignment="left">
+                        </div>
+                    </div>
+                    
+                    <div class="register-link">
+                        Belum punya akun? <a href="daftar.html">Daftar sekarang</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = this.querySelector('input[type="text"]').value;
+            const password = this.querySelector('input[type="password"]').value;
+            
+            if (username && password) {
+                alert('Login berhasil! Mengarahkan ke Beranda.');
+                // Arahkan ke halaman beranda2.html setelah login berhasil
+                window.location.href = 'beranda2.html';
+            }
+        });
+
+        // Add password visibility toggle
+        const passwordInputs = document.querySelectorAll('input[type="password"]');
+        passwordInputs.forEach(input => {
+            const wrapper = input.parentElement;
+            const toggleBtn = document.createElement('i');
+            toggleBtn.className = 'fas fa-eye';
+            toggleBtn.style.cssText = 'position: absolute; right: 22px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #3d4d27; font-size: 16px; z-index: 2;';
+            
+            toggleBtn.addEventListener('click', function() {
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    this.className = 'fas fa-eye-slash';
+                } else {
+                    input.type = 'password';
+                    this.className = 'fas fa-eye';
+                }
+            });
+            
+            wrapper.appendChild(toggleBtn);
+        });
+
+        function handleCredentialResponse(response) {
+            // Decode the credential response
+            const responsePayload = jwt_decode(response.credential);
+            
+            console.log("ID: " + responsePayload.sub);
+            console.log('Full Name: ' + responsePayload.name);
+            console.log('Email: ' + responsePayload.email);
+            console.log('Profile Picture: ' + responsePayload.picture);
+
+            // Here you can handle the Google sign-in response
+            alert('Google login berhasil! Fitur ini akan terhubung dengan backend Anda.');
+        }
+    </script>
+</body>
+</html>
