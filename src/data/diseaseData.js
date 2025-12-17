@@ -1,190 +1,186 @@
-export const diseaseData = [
-  {
-    id: 1,
-    title: "Ulat Penggulung Daun Kapas",
-    type: "Serangga",
-    plant: "Kapas",
-    image: "https://www.vegetables.cornell.edu/files/2020/11/Scab-fruit.jpg",
-    description: "Ulat penggulung daun kapas adalah hama yang menyerang tanaman kapas dengan cara menggulung daun dan memakan jaringan daun dari dalam.",
-    symptoms: ["Daun menggulung", "Lubang pada daun", "Pertumbuhan terhambat"],
-    prevention: ["Rotasi tanaman", "Penggunaan insektisida alami", "Pemasangan perangkap feromon"],
-    tags: [
-      { icon: "fas fa-bug", text: "Serangga" },
-      { icon: "fas fa-leaf", text: "Kapas" },
-      { icon: "fas fa-exclamation-triangle", text: "Berbahaya" }
-    ]
-  },
-  {
-    id: 2,
-    title: "Antraknosa pada Kedelai",
-    type: "Jamur",
-    plant: "Kedelai",
-    image: "https://www.vegetables.cornell.edu/files/2020/11/Phytophthora-blight-fruit-1024x768.jpg",
-    description: "Antraknosa adalah penyakit jamur yang menyebabkan bercak coklat kehitaman pada daun, batang, dan polong kedelai.",
-    symptoms: ["Bercak coklat pada daun", "Lesi pada batang", "Polong busuk"],
-    prevention: ["Gunakan benih bersertifikat", "Jaga kelembaban", "Aplikasi fungisida"],
-    tags: [
-      { icon: "fas fa-virus", text: "Jamur" },
-      { icon: "fas fa-leaf", text: "Kedelai" }
-    ]
-  },
-  {
-    id: 3,
-    title: "Kumbang Pistachio",
-    type: "Bakteri",
-    plant: "Pistachio",
-    image: "https://i0.wp.com/onvegetables.ca/wp-content/uploads/2012/07/dsc_0149.jpg",
-    description: "Kumbang yang menyerang tanaman pistachio dan menyebabkan kerusakan pada buah dan daun.",
-    symptoms: ["Lubang pada buah", "Daun rusak", "Produksi menurun"],
-    prevention: ["Pemasangan perangkap", "Pembersihan kebun", "Penyemprotan insektisida"],
-    tags: [
-      { icon: "fas fa-bug", text: "Serangga" },
-      { icon: "fas fa-seedling", text: "Pistachio" }
-    ]
-  },
-  {
-    id: 4,
-    title: "Busuk Batang Jagung",
-    type: "Virus",
-    plant: "Jagung",
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Cucumber_mosaic_virus_symptoms.jpg",
-    description: "Penyakit yang menyerang batang jagung menyebabkan pembusukan dan kematian tanaman.",
-    symptoms: ["Batang lunak", "Tanaman rebah", "Bau busuk"],
-    prevention: ["Drainase yang baik", "Rotasi tanaman", "Pemupukan seimbang"],
-    tags: [
-      { icon: "fas fa-virus", text: "Jamur" },
-      { icon: "fas fa-leaf", text: "Jagung" },
-      { icon: "fas fa-exclamation-circle", text: "Serius" }
-    ]
-  },
-  {
-    id: 5,
-    title: "Bercak Daun Padi",
-    type: "Bakteri",
-    plant: "Padi",
-    image: "https://ipm-cahnr.media.uconn.edu/wp-content/uploads/sites/3216/2023/11/bacterial-speck-gary-e-vallad-university-of-florida.jpeg",
-    description: "Penyakit bakteri yang menyebabkan bercak-bercak pada daun padi dan menurunkan hasil panen.",
-    symptoms: ["Bercak coklat pada daun", "Daun mengering", "Gabah hampa"],
-    prevention: ["Varietas tahan", "Pengaturan air", "Sanitasi lahan"],
-    tags: [
-      { icon: "fas fa-bacteria", text: "Bakteri" },
-      { icon: "fas fa-leaf", text: "Padi" }
-    ]
-  },
-  {
-    id: 6,
-    title: "Kutu Daun Kapas",
-    type: "Serangga",
-    plant: "Kapas",
-    image: "https://assets.corteva.com/is/image/Corteva/ar4-26jun20?$image_desktop$",
-    description: "Hama kutu daun yang mengisap cairan dari daun kapas menyebabkan tanaman layu.",
-    symptoms: ["Daun keriting", "Embun madu", "Pertumbuhan kerdil"],
-    prevention: ["Musuh alami", "Penyemprotan air", "Insektisida sistemik"],
-    tags: [
-      { icon: "fas fa-bug", text: "Serangga" },
-      { icon: "fas fa-leaf", text: "Kapas" }
-    ]
-  },
-  {
-    id: 7,
-    title: "Spotted Wilt Virus",
-    type: "Virus",
-    plant: "Tomat",
-    image: "https://bioprotectionportal.com/wp-content/uploads/2025/04/tomato-spotted-wilt-virus_symptom-1024x763.jpg?x62924",
-    description: "Virus yang ditularkan oleh thrips menyebabkan bercak dan layu pada tanaman tomat.",
-    symptoms: ["Bercak cincin pada daun", "Buah deformasi", "Tanaman layu"],
-    prevention: ["Kontrol thrips", "Varietas tahan", "Mulsa reflektif"],
-    tags: [
-      { icon: "fas fa-virus", text: "Virus" },
-      { icon: "fas fa-leaf", text: "Tomat" }
-    ]
-  },
-  {
-    id: 8,
-    title: "Hawar Daun Kentang",
-    type: "Jamur",
-    plant: "Kentang",
-    image: "https://s.hdnux.com/photos/01/34/05/54/24140594/6/rawImage.jpg",
-    description: "Penyakit jamur yang menyebabkan kerusakan parah pada daun dan umbi kentang.",
-    symptoms: ["Bercak hitam pada daun", "Daun layu cepat", "Umbi busuk"],
-    prevention: ["Fungisida preventif", "Varietas tahan", "Rotasi tanaman"],
-    tags: [
-      { icon: "fas fa-virus", text: "Jamur" },
-      { icon: "fas fa-leaf", text: "Kentang" }
-    ]
-  },
-  {
-    id: 9,
-    title: "Trips Cabai",
-    type: "Serangga",
-    plant: "Cabai",
-    image: "https://assets.corteva.com/is/image/Corteva/ar4-26jun20?$image_desktop$",
-    description: "Hama trips yang menyerang daun dan bunga cabai menyebabkan kerusakan dan penurunan produksi.",
-    symptoms: ["Daun keperakan", "Bunga rontok", "Buah cacat"],
-    prevention: ["Perangkap warna biru", "Musuh alami", "Rotasi tanaman"],
-    tags: [
-      { icon: "fas fa-bug", text: "Serangga" },
-      { icon: "fas fa-leaf", text: "Cabai" }
-    ]
-  },
-  {
-    id: 10,
-    title: "Layu Fusarium",
-    type: "Jamur",
-    plant: "Tomat",
-    image: "https://assets.corteva.com/is/image/Corteva/ar4-26jun20?$image_desktop$",
-    description: "Penyakit jamur tanah yang menyebabkan layu dan kematian tanaman tomat.",
-    symptoms: ["Daun menguning satu sisi", "Pembuluh coklat", "Tanaman layu permanen"],
-    prevention: ["Varietas tahan", "Solarisasi tanah", "Drainase baik"],
-    tags: [
-      { icon: "fas fa-virus", text: "Jamur" },
-      { icon: "fas fa-leaf", text: "Tomat" }
-    ]
-  },
-  {
-    id: 11,
-    title: "Wereng Coklat",
-    type: "Serangga",
-    plant: "Padi",
-    image: "https://assets.corteva.com/is/image/Corteva/ar4-26jun20?$image_desktop$",
-    description: "Hama utama padi yang mengisap cairan tanaman dan menularkan virus.",
-    symptoms: ["Tanaman menguning", "Hopperburn", "Gagal panen"],
-    prevention: ["Varietas tahan", "Pengaturan air", "Penanaman serempak"],
-    tags: [
-      { icon: "fas fa-bug", text: "Serangga" },
-      { icon: "fas fa-leaf", text: "Padi" }
-    ]
-  },
-  {
-    id: 12,
-    title: "Penggerek Batang Jagung",
-    type: "Serangga",
-    plant: "Jagung",
-    image: "https://assets.corteva.com/is/image/Corteva/ar4-26jun20?$image_desktop$",
-    description: "Larva ngengat yang menggerek batang jagung menyebabkan tanaman patah dan mati.",
-    symptoms: ["Lubang pada batang", "Tanaman patah", "Tongkol tidak sempurna"],
-    prevention: ["Penanaman serempak", "Pembersihan sisa tanaman", "Insektisida saat tanam"],
-    tags: [
-      { icon: "fas fa-bug", text: "Serangga" },
-      { icon: "fas fa-leaf", text: "Jagung" }
-    ]
-  }
-]
+﻿export const diseaseData = [
+    {
+        id: 1,
+        title: 'Anthracnose pada Apple',
+        type: 'Anthracnose',
+        plant: 'apple',
+        image: 'https://s3-us-west-2.amazonaws.com/treefruit.wsu.edu/wp-content/uploads/2016/06/Bulls-eye-rot.jpg',
+        description: 'Penyakit Anthracnose pada apel disebabkan oleh jamur yang dapat merusak buah dan menyebabkan pembusukan.',
+        symptoms: ['Bercak coklat pada buah', 'Pembusukan melingkar', 'Spora berwarna pink pada kondisi lembab'],
+        prevention: ['Sanitasi kebun', 'Pemangkasan ranting yang terinfeksi', 'Penyemprotan fungisida'],
+        treatment: ['Fungisida berbahan aktif mancozeb', 'Pengendalian kelembaban'],
+        tags: [
+            { icon: 'fas fa-bug', text: 'Jamur' },
+            { icon: 'fas fa-exclamation-triangle', text: 'Berbahaya' }
+        ]
+    },
+    {
+        id: 2,
+        title: 'Alternaria pada Guava',
+        type: 'Alternaria',
+        plant: 'guava',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/d/da/Cephaleuros_parasiticus.jpg',
+        description: 'Alternaria pada jambu biji menyebabkan bercak daun dan busuk buah.',
+        symptoms: ['Bercak hitam pada daun', 'Buah membusuk dari ujung', 'Daun rontok'],
+        prevention: ['Jaga kebersihan kebun', 'Hindari kelembaban tinggi', 'Jarak tanam yang cukup'],
+        treatment: ['Fungisida tembaga', 'Pemangkasan'],
+        tags: [
+            { icon: 'fas fa-virus', text: 'Jamur' },
+            { icon: 'fas fa-exclamation-triangle', text: 'Berbahaya' }
+        ]
+    },
+    {
+        id: 3,
+        title: 'Rot pada Mango',
+        type: 'Rot',
+        plant: 'mango',
+        image: 'https://thumbs.dreamstime.com/b/mango-fruit-mold-mould-one-structures-certain-fungi-can-form-formation-spores-containing-fungal-secondary-302115966.jpg',
+        description: 'Pembusukan pada mangga sering terjadi pasca panen atau saat buah matang di pohon.',
+        symptoms: ['Daging buah lunak dan berair', 'Bau busuk', 'Kulit buah menghitam'],
+        prevention: ['Panen hati-hati', 'Penyimpanan dingin', 'Perlakuan air panas'],
+        treatment: ['Tidak ada obat untuk buah yang sudah busuk', 'Cegah penyebaran ke buah lain'],
+        tags: [
+            { icon: 'fas fa-bug', text: 'Pembusukan' },
+            { icon: 'fas fa-exclamation-triangle', text: 'Beresiko' }
+        ]
+    },
+    {
+        id: 4,
+        title: 'Anthracnose pada Pomegranate',
+        type: 'Anthracnose',
+        plant: 'pomegranate',
+        image: 'https://content.peat-cloud.com/w400/anthracnose-of-pomegranate-pomegranate-1665753930.jpg',
+        description: 'Anthracnose pada delima menyebabkan bercak hitam pada kulit buah dan biji membusuk.',
+        symptoms: ['Bercak hitam keras pada kulit', 'Biji membusuk', 'Buah pecah'],
+        prevention: ['Bersihkan sisa tanaman', 'Semprot fungisida saat berbunga'],
+        treatment: ['Fungisida sistemik'],
+        tags: [
+            { icon: 'fas fa-virus', text: 'Jamur' },
+            { icon: 'fas fa-exclamation-triangle', text: 'Berbahaya' }
+        ]
+    },
+    {
+        id: 5,
+        title: 'Alternaria pada Apple',
+        type: 'Alternaria',
+        plant: 'apple',
+        image: 'https://bugwoodcloud.org/images/384x256/5524192.jpg',
+        description: 'Bercak daun Alternaria pada apel dapat menyebabkan defoliasi dini.',
+        symptoms: ['Bercak bulat pada daun', 'Tengah bercak berwarna coklat', 'Daun menguning'],
+        prevention: ['Pengelolaan residu tanaman', 'Fungisida protektif'],
+        treatment: ['Fungisida Iprodione'],
+        tags: [
+            { icon: 'fas fa-bacteria', text: 'Jamur' },
+            { icon: 'fas fa-exclamation-triangle', text: 'Berbahaya' }
+        ]
+    },
+    {
+        id: 6,
+        title: 'Rot pada Guava',
+        type: 'Rot',
+        plant: 'guava',
+        image: 'https://www.shutterstock.com/image-photo/guava-fruit-rot-fly-infestation-260nw-1034569393.jpg',
+        description: 'Pembusukan buah jambu biji sering disebabkan oleh lalat buah atau jamur.',
+        symptoms: ['Buah lunak', 'Ada belatung (jika lalat buah)', 'Bau fermentasi'],
+        prevention: ['Pembungkusan buah', 'Perangkap lalat buah'],
+        treatment: ['Kumpulkan dan musnahkan buah busuk'],
+        tags: [
+            { icon: 'fas fa-bug', text: 'Pembusukan' },
+            { icon: 'fas fa-exclamation-triangle', text: 'Beresiko' }
+        ]
+    },
+    {
+        id: 7,
+        title: 'Anthracnose pada Mango',
+        type: 'Anthracnose',
+        plant: 'mango',
+        image: 'https://gdm.id/wp-content/uploads/2023/11/penyakit-antraknosa-pada-mangga-1-300x200.jpg',
+        description: 'Penyakit utama pada mangga, menyebabkan bercak hitam pada daun, bunga, dan buah.',
+        symptoms: ['Bercak hitam pada daun', 'Bunga rontok', 'Tear stain pada buah'],
+        prevention: ['Pemangkasan tajuk', 'Sanitasi'],
+        treatment: ['Fungisida Azoxystrobin'],
+        tags: [
+            { icon: 'fas fa-bug', text: 'Jamur' },
+            { icon: 'fas fa-exclamation-triangle', text: 'Berbahaya' }
+        ]
+    },
+    {
+        id: 8,
+        title: 'Alternaria pada Pomegranate',
+        type: 'Alternaria',
+        plant: 'pomegranate',
+        image: 'https://us-central1-plantix-8e0ce.cloudfunctions.net/v1/image/w400/e0c91b70-f377-46e1-b446-e5668b4941b3',
+        description: 'Menyebabkan busuk hati pada buah delima.',
+        symptoms: ['Bagian dalam buah membusuk', 'Kulit luar tampak sehat atau sedikit berubah warna'],
+        prevention: ['Hindari kelembaban tinggi saat berbunga'],
+        treatment: ['Sulit diobati setelah infeksi masuk'],
+        tags: [
+            { icon: 'fas fa-bug', text: 'Jamur' },
+            { icon: 'fas fa-exclamation-triangle', text: 'Berbahaya' }
+        ]
+    },
+    {
+        id: 9,
+        title: 'Rot pada Apple',
+        type: 'Rot',
+        plant: 'apple',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Bitter_rot_on_a_Honeycrisp_apple.jpg/500px-Bitter_rot_on_a_Honeycrisp_apple.jpg',
+        description: 'Bitter rot pada apel.',
+        symptoms: ['Bercak busuk cekung', 'Rasa pahit pada bagian busuk'],
+        prevention: ['Kalsium spray', 'Sanitasi'],
+        treatment: ['Fungisida Captan'],
+        tags: [
+            { icon: 'fas fa-bug', text: 'Pembusukan' },
+            { icon: 'fas fa-exclamation-triangle', text: 'Beresiko' }
+        ]
+    },
+    {
+        id: 10,
+        title: 'Anthracnose pada Guava',
+        type: 'Anthracnose',
+        plant: 'guava',
+        image: 'https://content.peat-cloud.com/w400/anthracnose-guava-1665755294.jpg',
+        description: 'Menyebabkan bercak nekrotik pada daun dan buah jambu.',
+        symptoms: ['Bercak kering pada daun', 'Buah mengkerut'],
+        prevention: ['Sanitasi'],
+        treatment: ['Fungisida'],
+        tags: [
+            { icon: 'fas fa-bug', text: 'Jamur' },
+            { icon: 'fas fa-exclamation-triangle', text: 'Berbahaya' }
+        ]
+    },
+    {
+        id: 11,
+        title: 'Alternaria pada Mango',
+        type: 'Alternaria',
+        plant: 'mango',
+        image: 'https://content.peat-cloud.com/w400/bacterial-black-spot-of-mango-1552661367.jpg',
+        description: 'Bercak daun dan buah pada mangga.',
+        symptoms: ['Bercak hitam kecil', 'Daun menguning'],
+        prevention: ['Jaga kesehatan tanaman'],
+        treatment: ['Fungisida'],
+        tags: [
+            { icon: 'fas fa-bug', text: 'Jamur' },
+            { icon: 'fas fa-exclamation-triangle', text: 'Berbahaya' }
+        ]
+    },
+    {
+        id: 12,
+        title: 'Rot pada Pomegranate',
+        type: 'Rot',
+        plant: 'pomegranate',
+        image: 'https://cdn.pixabay.com/photo/2022/01/15/17/01/pomegranate-6940145_960_720.jpg',
+        description: 'Pembusukan buah delima.',
+        symptoms: ['Buah lunak', 'Berjamur'],
+        prevention: ['Panen tepat waktu'],
+        treatment: ['-'],
+        tags: [
+            { icon: 'fas fa-bug', text: 'Pembusukan' },
+            { icon: 'fas fa-exclamation-triangle', text: 'Beresiko' }
+        ]
+    },
+];
 
 export const getDiseaseById = (id) => {
-  return diseaseData.find(d => d.id === parseInt(id))
-}
-
-export const filterDiseases = (searchTerm, plantFilter, diseaseFilter) => {
-  return diseaseData.filter(disease => {
-    const matchesSearch = !searchTerm || 
-      disease.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-      disease.plant.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      disease.type.toLowerCase().includes(searchTerm.toLowerCase())
-    
-    const matchesPlant = !plantFilter || disease.plant.toLowerCase() === plantFilter.toLowerCase()
-    const matchesDisease = !diseaseFilter || disease.type.toLowerCase() === diseaseFilter.toLowerCase()
-
-    return matchesSearch && matchesPlant && matchesDisease
-  })
-}
+  return diseaseData.find(disease => disease.id === parseInt(id));
+};
